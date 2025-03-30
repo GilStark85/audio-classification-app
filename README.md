@@ -1,130 +1,99 @@
-# 🎧 Audio Classification App
+# 🎵 Audio Classification App
 
-[![Python](https://img.shields.io/badge/Python-3.10-blue)](https://www.python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-red)](https://streamlit.io)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+This project is a web-based application that classifies audio clips into one of 10 sound categories using a machine learning model trained on the UrbanSound8K dataset.
 
-Classifies uploaded audio as:
-- 🎤 Dialogue (Speech)
-- 🎶 Music
-- 💥 Sound Effects
+## 📦 Features
 
-Built with machine learning using Python and Streamlit.
+- Upload your own `.wav` file or use a built-in sample
+- Real-time audio classification using a pre-trained model
+- Interactive visualizations of the waveform and spectrogram
+- Web-based UI powered by Streamlit
 
----
+## 📁 Dataset
 
-## 📸 Demo Screenshot
+The model is trained on the [UrbanSound8K](https://urbansounddataset.weebly.com/urbansound8k.html) dataset. It consists of 8732 labeled sound excerpts (<=4s) of urban sounds from 10 classes:
+- Air Conditioner
+- Car Horn
+- Children Playing
+- Dog Bark
+- Drilling
+- Engine Idling
+- Gun Shot
+- Jackhammer
+- Siren
+- Street Music
 
-> Add your own screenshot here!
-![Screenshot](screenshots/app_preview.png)
+## 🤖 Model Training
 
----
+The audio classifier uses:
+- **Librosa** for audio feature extraction
+- **Scikit-learn** for model training (Random Forest Classifier)
+- **Pickle** to save the trained model
 
-## 🚀 Features
+Features extracted include:
+- MFCC (Mel Frequency Cepstral Coefficients)
+- Chroma Frequencies
+- Mel Spectrogram
+- Spectral Contrast
+- Tonnetz
 
-- Real-time audio classification via browser
-- MFCC feature extraction using Librosa
-- Random Forest classifier (scikit-learn)
-- Live prediction with class probabilities
+## 🌐 Live Demo
 
----
+Try it out here 👉 [Live App](https://audio-classification-app-hxmtmr7u4n4qpuaf974x2l.streamlit.app/)
 
-## 🌐 [Try It Live](https://audio-classification-app-hxmtmr7u4n4qpuaf974x2l.streamlit.app/)
+## Demo
 
----
+### App in Action (GIF)
+![App Demo](demo/app-demo.gif)
+
+### Screenshot
+![App Screenshot](demo/app-screenshot.png)
+
+## 🛠️ Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/GilStark85/audio-classification-app.git
+cd audio-classification-app
+
+# (Optional) Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
+streamlit run app.py
+```
+
+## 🧪 Run Tests
+
+```bash
+python test_app.py
+```
 
 ## 📁 Project Structure
 
 ```
-├── app.py
-├── train_audio_classifier.py
-├── audio_model.pkl
-├── requirements.txt
-├── README.md
-├── LICENSE
+audio-classification-app/
+│
+├── app.py                  # Streamlit frontend
+├── train_audio_classifier.py  # Model training script
+├── audio_model.pkl         # Trained model
+├── test_app.py             # Unit tests
+├── requirements.txt        # Dependencies
 ├── .gitignore
-└── tests/
-    └── test_app.py
+├── README.md
+└── demo/
+    ├── app-demo.gif
+    └── app-screenshot.png
 ```
 
----
+## 📝 License
 
-## 🧠 Tech Stack
-
-- [Python 3.10](https://www.python.org/)
-- [Streamlit](https://streamlit.io/)
-- [Librosa](https://librosa.org/)
-- [Scikit-learn](https://scikit-learn.org/)
-- [UrbanSound8K Dataset](https://urbansounddataset.weebly.com/urbansound8k.html)
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 🛠️ Run Locally
-
-```bash
-git clone https://github.com/GilStark85/audio-classification-app.git
-cd audio-classification-app
-pip install -r requirements.txt
-streamlit run app.py
-```
-
----
-
-## 📬 Contact
-
-Got questions or want to collaborate? [Open an issue](https://github.com/GilStark85/audio-classification-app/issues)
-
----
- model             |
-| `requirements.txt`        | Python dependencies                        |
-| `tests/test_app.py`       | Unit test for model and feature extraction |
-| `demo/`                   | Contains screenshots and GIFs              |
-
----
-
-## 🧠 Tech Stack
-
-- [Python 3.10](https://www.python.org/)
-- [Streamlit](https://streamlit.io/)
-- [Librosa](https://librosa.org/)
-- [Scikit-learn](https://scikit-learn.org/)
-- [UrbanSound8K Dataset](https://urbansounddataset.weebly.com/urbansound8k.html)
-
----
-
-## 🔮 Roadmap
-
-- [ ] Add real-time microphone input
-- [ ] Display waveform and spectrogram visualizations
-- [ ] Support MP3 to WAV conversion behind-the-scenes
-- [ ] Upgrade model to CNN or transformer-based classifier
-
----
-
-## 🌟 Featured Project
-
-> This app is part of my AI portfolio focused on entertainment and post-production tech.
-
-[![View the Repo](https://img.shields.io/badge/GitHub-View%20Code-black?logo=github)](https://github.com/GilStark85/audio-classification-app)
-[![Try Live](https://img.shields.io/badge/Streamlit-Try%20App-brightgreen?logo=streamlit)](https://audio-classification-app-hxmtmr7u4n4qpuaf974x2l.streamlit.app/)
-
----
-
-## 🛠️ Run Locally
-
-Clone the repository and install dependencies:
-
-```bash
-git clone https://github.com/GilStark85/audio-classification-app.git
-cd audio-classification-app
-pip install -r requirements.txt
-streamlit run app.py
-```
-
----
-
-## 📬 Contact
-
-If you have any questions or feedback, feel free to reach out via GitHub issues.
-
----
+Created with ❤️ by [@GilStark85](https://github.com/GilStark85)
